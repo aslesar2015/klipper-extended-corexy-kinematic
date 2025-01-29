@@ -65,7 +65,7 @@ class ExtendedCoreXYKinematics:
             rail.set_position(newpos)
             # rails : abzc, axes : xyz
             # rail C is also based on B, so no need to check on C when B is set
-            if i < len("xyz"):
+            if "xyz"[i] < len("xyz"):
                 if "xyz"[i] in homing_axes:
                     self.limits[i] = rail.get_range()
     def home(self, homing_state):
